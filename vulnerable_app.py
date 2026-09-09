@@ -1,8 +1,8 @@
 import sqlite3
+import os
 
-# High Severity: Hardcoded credentials
-DB_USER = "admin"
-DB_PASS = "supersecretpassword123"
+DB_USER = os.getenv("DB_USER")
+DB_PASS = os.getenv("DB_PASS")
 
 def get_user_data(user_id):
     conn = sqlite3.connect('users.db')
